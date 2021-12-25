@@ -9,18 +9,18 @@ const url="mongodb+srv://pavan:Temp!123@cluster0.ezaop.mongodb.net/Student?retry
 const handleRequest=http.createServer(app);
 let db;
 
-// MongoClient.connect(url,function(err,res){
-//     if(err){
-//         console.log("Something broke.Please try again")
-//     }else{
-//         console.log('Connected to database')
+MongoClient.connect(url,function(err,res){
+    if(err){
+        console.log("Something broke.Please try again")
+    }else{
+        console.log('Connected to database')
         handleRequest.listen(PORT,()=>{
             console.log('Listening')
         })
-//         db=res.db('Student')
-//         global.dbRef=db
-//     }
-// })
+        db=res.db('Student')
+        global.dbRef=db
+    }
+})
 
 
 
