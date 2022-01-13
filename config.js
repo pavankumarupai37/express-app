@@ -3,8 +3,9 @@ const app=require('./app')
 const mongoose=require('mongoose');
 
 const PORT=process.env.PORT ||9095;
-const url="mongodb+srv://pavan:Temp!123@shopcluster.okgo6.mongodb.net/GaneshStores?retryWrites=true&w=majority";
+const url=`mongodb+srv://${process.env.MONGO_DB_USERNAME}:${process.env.MONGO_DB_PASSWORD}@shopcluster.okgo6.mongodb.net/GaneshStores?retryWrites=true&w=majority`;
 
+console.log(url)
 const handleRequest=http.createServer(app);
 
 mongoose.connect(url,{useNewUrlParser:true,useUnifiedTopology:true},function(err,res){

@@ -1,5 +1,6 @@
 const express=require('express');
 const app=express();
+require('dotenv').config();
 
 //API imports
 const orderRoutes=require('./api/orders')
@@ -7,6 +8,7 @@ const productsRoutes=require('./api/products');
 
 //Middleware (requests conversion to json)
 app.use(express.json())
+app.use('/uploads',express.static('uploads'))
 
 //Handle CORS errors
 app.use((req,res,next)=>{

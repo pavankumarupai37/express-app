@@ -6,14 +6,17 @@
   "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node config.js"
+    "start": "nodemon config.js"
   },
   "author": "'pavan'",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.0",
+    "dotenv": "^11.0.0",
     "express": "^4.17.1",
     "mongodb": "^3.6.3",
-    "mongoose": "^5.13.14"
+    "mongoose": "^5.13.14",
+    "multer": "^1.4.4",
+    "nodemailer": "^6.7.2"
   }
 }
