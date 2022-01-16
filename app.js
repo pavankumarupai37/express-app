@@ -5,6 +5,7 @@ require('dotenv').config();
 //API imports
 const orderRoutes=require('./api/orders')
 const productsRoutes=require('./api/products');
+const userRoutes=require('./api/users');
 
 //Middleware (requests conversion to json)
 app.use(express.json())
@@ -24,6 +25,7 @@ app.use((req,res,next)=>{
 //Middlewares (API routing)
 app.use('/orders',orderRoutes)
 app.use('/products',productsRoutes)
+app.use('/user',userRoutes)
 
 //Error handling
 app.use((req,res,next)=>{
